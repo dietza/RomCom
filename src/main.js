@@ -33,7 +33,6 @@ function getRandomIndex(array) {
 }
 
 
-
 // use to grab a random cover from the array in data.js file
 // console.log(getRandomIndex(covers));
 // console.log(covers[getRandomIndex(covers)]);
@@ -45,6 +44,18 @@ function createCover() {
   var randomTag1 = getRandomIndex(descriptors);
   var randomTag2 = getRandomIndex(descriptors);
   currentCover = new Cover(randomCover, randomTitle, randomTag1, randomTag2);
+
+  showCover(currentCover);
+
+}
+
+
+function showCover(coverObj) {
+
+  coverImg.src = coverObj.cover;
+  coverTitle.innerText = coverObj.title;
+  tagline1.innerText = coverObj.tagline1;
+  tagline2.innerText = coverObj.tagline2;
 
 }
 
