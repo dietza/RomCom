@@ -5,6 +5,8 @@ var coverTitle = document.querySelector('.cover-title');
 var tagline1 = document.querySelector('.tagline-1');
 var tagline2 = document.querySelector('.tagline-2');
 
+var newRandomCoverButton = document.querySelector('.random-cover-button');
+
 
 // change image src
 // document.getElementById('myImageID').src="images/my_other_image.png";
@@ -23,7 +25,7 @@ var currentCover;
 
 window.addEventListener('load', createCover);
 
-
+newRandomCoverButton.addEventListener('click', createCover);
 
 
 // We've provided one function to get you started
@@ -58,6 +60,9 @@ function showCover(coverObj) {
   tagline2.innerText = coverObj.tagline2;
 
 }
+
+
+
 
 // the 'covers' array (from data file) is passed in as an argument to the getRandomIndex function.
 // that function returns a randomly generated index number relative to the 'covers' array,
