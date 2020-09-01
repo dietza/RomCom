@@ -30,10 +30,19 @@ var savedCovers = [
 ];
 var currentCover;
 
+<<<<<<< Updated upstream
 // Add your event listeners here 👇
 window.addEventListener()
 
 showRandomButton.addEventListener('click', showRandomCover);
+=======
+
+
+// event listeners
+window.addEventListener('load', createRandomCover);
+
+showRandomButton.addEventListener('click', createRandomCover);
+>>>>>>> Stashed changes
 makeNewButton.addEventListener('click', showNewCoverForm);
 homeButton.addEventListener('click',showHome);
 viewSavedButton.addEventListener('click', showSaved);
