@@ -1,10 +1,26 @@
-// Create variables targetting the relevant DOM elements here 👇
-var coverImg = document.querySelector('.cover-image');
-var coverTitle = document.querySelector('.cover-title');
-var tagline1 = document.querySelector('.tagline-1');
-var tagline2 = document.querySelector('.tagline-2');
+var domCover = document.querySelector('.cover-image');
+var domTitle = document.querySelector('.cover-title');
+var domTagLine1 = document.querySelector('.tagline-1');
+var domTagLine2 = document.querySelector('.tagline-2');
 
-var newRandomCoverButton = document.querySelector('.random-cover-button');
+//buttons
+var showRandomButton = document.querySelector('.random-cover-button');
+var makeNewButton = document.querySelector('.make-new-button');
+var homeButton = document.querySelector('.home-button');
+var saveCoverButton = document.querySelector('.save-cover-button');
+var viewSavedButton = document.querySelector('.view-saved-button');
+
+//sections
+var sectionHome = document.querySelector('.home-view');
+var sectionSaved = document.querySelector('.saved-view');
+var sectionForm = document.querySelector('.form-view');
+
+//form inputs
+var inputCover = document.querySelector('.user-cover');
+var inputTitle = document.querySelector('.user-title');
+var inputTagline1 = document.querySelector('.user-desc1');
+var inputTagline2 = document.querySelector('.user-desc2');
+
 
 
 // We've provided a few variables below
@@ -14,9 +30,12 @@ var savedCovers = [
 var currentCover;
 
 // Add your event listeners here 👇
+showRandomButton.addEventListener('click', showRandomCover);
+makeNewButton.addEventListener('click', showNewCoverForm);
+homeButton.addEventListener('click',showHome);
+viewSavedButton.addEventListener('click', showSaved);
 
 
-// Create your event handlers and other functions here 👇
 
 window.addEventListener('load', createCover);
 
@@ -30,9 +49,6 @@ function getRandomIndex(array) {
 }
 
 
-// use to grab a random cover from the array in data.js file
-// console.log(getRandomIndex(covers));
-// console.log(covers[getRandomIndex(covers)]);
 
 function createCover() {
 
@@ -59,14 +75,71 @@ function showCover(coverObj) {
 
 
 
-// the 'covers' array (from data file) is passed in as an argument to the getRandomIndex function.
-// that function returns a randomly generated index number relative to the 'covers' array,
-// which is then
+function showNewCoverForm() {
+
+  //show/hide buttons
+  homeButton.classList.remove('hidden');
+  showRandomButton.classList.add('hidden');
+  saveCoverButton.classList.add('hidden');
+
+  //hide other sections
+  sectionHome.classList.add('hidden');
+  sectionSaved.classList.add('hidden');
+
+  //clear form
+  clearForm();
+
+  //show form section
+  sectionForm.classList.remove('hidden');
+}
+
+function clearForm() {
+  //separate function because we will call it more than once
+  inputTitle.value = inputCover.value = inputTagline1.value = inputTagline2.value = '';
+}
+
+function showSaved() {
+  homeButton.classList.remove('hidden');
+  showRandomButton.classList.add('hidden');
+  saveCoverButton.classList.add('hidden');
+
+  //hide other sections
+  sectionHome.classList.add('hidden');
+  sectionForm.classList.add('hidden');
+
+  //show form section
+  sectionSaved.classList.remove('hidden');
+}
+
+function showHome() {
+  homeButton.classList.add('hidden');
+  showRandomButton.classList.remove('hidden');
+  saveCoverButton.classList.remove('hidden');
+
+  //hide other sections
+  sectionForm.classList.add('hidden');
+  sectionSaved.classList.add('hidden');
+
+  //clear form ...show new random?
+  showRandomCover();
+
+  //show Home section
+  sectionHome.classList.remove('hidden');
+}
 
 
-///// We need to create an event listener for the page refresh.
-///// When the page is refreshed, the browser will show a new, randomly-selected cover (and title, etc)
-/////
-///// DECLARE the variables for ALL of the DOM elements which will need to be used.
-///// for the '.cover-image' '.cover-title' '.tagline-1' '.tagline-2'
-///// for each (all) of the randomly generated values
+function showRandomCover() {
+  createRandomCover();
+  displayCover();
+}
+
+function createRandomCover() {
+  currentCover = new Cover(covers[getRandomIndex(covers)],titles[getRandomIndex(titles)],descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
+}
+
+function displayCover(){
+  domCover.src = currentCover.cover;
+  domTitle.innerHTML = currentCover.title;
+  domTagLine1.innerHTML = currentCover.tagline1;
+  domTagLine2.innerHTML = currentCover.tagline2;
+}
