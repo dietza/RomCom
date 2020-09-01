@@ -1,5 +1,4 @@
 // Create variables targetting the relevant DOM elements here 👇
-
 var coverImg = document.querySelector('.cover-image');
 var coverTitle = document.querySelector('.cover-title');
 var tagline1 = document.querySelector('.tagline-1');
@@ -7,9 +6,6 @@ var tagline2 = document.querySelector('.tagline-2');
 
 var newRandomCoverButton = document.querySelector('.random-cover-button');
 
-
-// change image src
-// document.getElementById('myImageID').src="images/my_other_image.png";
 
 // We've provided a few variables below
 var savedCovers = [
@@ -19,7 +15,6 @@ var currentCover;
 
 // Add your event listeners here 👇
 
-// console.log("savedCovers", savedCovers);
 
 // Create your event handlers and other functions here 👇
 
