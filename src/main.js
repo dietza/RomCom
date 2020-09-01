@@ -1,3 +1,4 @@
+
 var domCover = document.querySelector('.cover-image');
 var domTitle = document.querySelector('.cover-title');
 var domTagLine1 = document.querySelector('.tagline-1');
@@ -37,43 +38,9 @@ viewSavedButton.addEventListener('click', showSaved);
 
 
 
-window.addEventListener('load', createCover);
-
-newRandomCoverButton.addEventListener('click', createCover);
-
-
-// We've provided one function to get you started
 function getRandomIndex(array) {
-  var randomIndex = Math.floor(Math.random() * array.length);
-  return array[randomIndex];
+  return Math.floor(Math.random() * array.length);
 }
-
-
-
-function createCover() {
-
-  var randomCover = getRandomIndex(covers);
-  var randomTitle = getRandomIndex(titles);
-  var randomTag1 = getRandomIndex(descriptors);
-  var randomTag2 = getRandomIndex(descriptors);
-  currentCover = new Cover(randomCover, randomTitle, randomTag1, randomTag2);
-
-  showCover(currentCover);
-
-}
-
-
-function showCover(coverObj) {
-
-  coverImg.src = coverObj.cover;
-  coverTitle.innerText = coverObj.title;
-  tagline1.innerText = coverObj.tagline1;
-  tagline2.innerText = coverObj.tagline2;
-
-}
-
-
-
 
 function showNewCoverForm() {
 
