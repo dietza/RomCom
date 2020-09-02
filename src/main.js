@@ -1,4 +1,4 @@
-//querySelectors for displayed cover elements
+//querySelectors: variables for displayed cover elements
 var domCoverImg = document.querySelector('.cover-image');
 var domTitle = document.querySelector('.cover-title');
 var domTagLine1 = document.querySelector('.tagline-1');
@@ -24,7 +24,7 @@ var inputTagline2 = document.querySelector('.user-desc2');
 
 
 
-// We've provided a few variables below
+// Given variables
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
@@ -34,17 +34,13 @@ var currentCover;
 
 // event listeners
 window.addEventListener('load', createRandomCover);
-
 showRandomButton.addEventListener('click', createRandomCover);
 makeNewButton.addEventListener('click', showNewCoverForm);
 homeButton.addEventListener('click',showHome);
 viewSavedButton.addEventListener('click', showSaved);
 
 
-
-// function getRandomIndex(array) {
-//   return Math.floor(Math.random() * array.length);
-// }
+// functions
 
 // returns the value associated with the randomly generated index for any given array
 function getRandomIndex(array) {
@@ -53,8 +49,6 @@ function getRandomIndex(array) {
 }
 
 
-// functions:
-////////
 function showNewCoverForm() {
 
   //show/hide buttons
@@ -73,13 +67,13 @@ function showNewCoverForm() {
   sectionForm.classList.remove('hidden');
 }
 
-////////
+
 function clearForm() {
   //separate function because we will call it more than once
   inputTitle.value = inputCover.value = inputTagline1.value = inputTagline2.value = '';
 }
 
-////////
+
 function showSaved() {
   homeButton.classList.remove('hidden');
   showRandomButton.classList.add('hidden');
@@ -93,7 +87,7 @@ function showSaved() {
   sectionSaved.classList.remove('hidden');
 }
 
-////////
+
 function showHome() {
   homeButton.classList.add('hidden');
   showRandomButton.classList.remove('hidden');
@@ -103,25 +97,14 @@ function showHome() {
   sectionForm.classList.add('hidden');
   sectionSaved.classList.add('hidden');
 
-  //clear form ...show new random?
-  createRandomCover();
-
   //show Home section
   sectionHome.classList.remove('hidden');
+
+  //clear form, show new random
+  createRandomCover();
 }
 
-////////
-// function showRandomCover() {
-//   createRandomCover();
-//   displayCover();
-// }
 
-////////
-// function createRandomCover() {
-//   currentCover = new Cover(covers[getRandomIndex(covers)],titles[getRandomIndex(titles)],descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
-// }
-
-////////
 function createRandomCover() {
 
   var randomCover = getRandomIndex(covers);
@@ -134,7 +117,7 @@ function createRandomCover() {
 
 }
 
-////////
+
 function showCover(coverObj) {
 
   domCoverImg.src = coverObj.cover;
@@ -143,11 +126,3 @@ function showCover(coverObj) {
   domTagLine2.innerText = coverObj.tagline2;
 
 }
-
-//////
-// function displayCover(){
-//   domCover.src = currentCover.cover;
-//   domTitle.innerHTML = currentCover.title;
-//   domTagLine1.innerHTML = currentCover.tagline1;
-//   domTagLine2.innerHTML = currentCover.tagline2;
-// }
