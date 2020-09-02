@@ -100,7 +100,7 @@ function showHome() {
   //show Home section
   sectionHome.classList.remove('hidden');
 
-  //clear form ...show new random?
+  //clear form, show new random
   createRandomCover();
 }
 
