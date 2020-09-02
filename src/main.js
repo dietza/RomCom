@@ -30,19 +30,12 @@ var savedCovers = [
 ];
 var currentCover;
 
-<<<<<<< Updated upstream
-// Add your event listeners here 👇
-window.addEventListener()
-
-showRandomButton.addEventListener('click', showRandomCover);
-=======
 
 
 // event listeners
 window.addEventListener('load', createRandomCover);
 
 showRandomButton.addEventListener('click', createRandomCover);
->>>>>>> Stashed changes
 makeNewButton.addEventListener('click', showNewCoverForm);
 homeButton.addEventListener('click',showHome);
 viewSavedButton.addEventListener('click', showSaved);
@@ -59,6 +52,9 @@ function getRandomIndex(array) {
   return array[randomIndex];
 }
 
+
+// functions:
+////////
 function showNewCoverForm() {
 
   //show/hide buttons
@@ -77,11 +73,13 @@ function showNewCoverForm() {
   sectionForm.classList.remove('hidden');
 }
 
+////////
 function clearForm() {
   //separate function because we will call it more than once
   inputTitle.value = inputCover.value = inputTagline1.value = inputTagline2.value = '';
 }
 
+////////
 function showSaved() {
   homeButton.classList.remove('hidden');
   showRandomButton.classList.add('hidden');
@@ -95,6 +93,7 @@ function showSaved() {
   sectionSaved.classList.remove('hidden');
 }
 
+////////
 function showHome() {
   homeButton.classList.add('hidden');
   showRandomButton.classList.remove('hidden');
