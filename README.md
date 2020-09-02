@@ -11,6 +11,11 @@
 * Manipulating the page after it was loaded adding, removing, and updating elements on the DOM
 
 
+## Prerequisites
+
+None! This project was developed on macOS Catalina 10.15.6 and tested in Chrome browsers (Version 85.0.4183.83),
+but does not require users to install any software or further functionality.
+
 ## Visuals
 
 ![Screen Shot 2020-09-01 at 2 08 57 PM](https://user-images.githubusercontent.com/65628677/91902304-ba9aa780-ec5e-11ea-97d5-36014ddb0197.png)
@@ -19,14 +24,14 @@
 
 ![Screen Shot 2020-09-01 at 2 09 10 PM](https://user-images.githubusercontent.com/65628677/91902325-c1291f00-ec5e-11ea-8953-dba33d28b1e1.png)
 
-* Every time the user clicks the Show New Random Cover button, a new random cover is created.
+* Every time the user clicks the Show New Random Cover button, a new random cover is created and displayed.
 
 
 ![Screen Shot 2020-09-01 at 2 09 29 PM](https://user-images.githubusercontent.com/65628677/91902342-c7b79680-ec5e-11ea-913f-6d91a4881da8.png)
 
 * When a user clicks the “Make Your Own Cover” button, we see the form, and the homepage view is hidden.
 * When the Form view is visible, the “Show New Random Cover” and “Save Cover” buttons are hidden.
-* When the Form view is visible, the “Home” button is be visible.
+* When the Form view is visible, the “Home” button will be visible.
 
 
 ## Languages
@@ -36,7 +41,7 @@
 * CSS
 
 
-### ✨ [GitHub Pages site](https://dietza.github.io/RomCom/)
+### ✨ [GitHub Pages, live site](https://dietza.github.io/RomCom/)
 
 
 
@@ -45,9 +50,14 @@
 👤    **Allison Dietz, Ben Prat**
 
 
-* Github:
+#### Github:
 * https:\/\/github.com\/dietza
 * https:\/\/github.com\/benjaminprat
 
+
+###### If you would like to contribute,
+
+Please refer to the original prompt provided [here](https://dietza.github.io/RomCom/),
+as further development should begin by adding functionality to the form where a user would create their new cover.
 
 ***
